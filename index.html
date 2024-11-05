@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pageant Admin Login</title>
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="loginForm.css">
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <h2>Admin Login</h2>
+            <div class="input-group">
+                <i class='bx bx-user'></i>
+                <div class="input-field">
+                    <input type="text" id="username" name="username" placeholder="Username or Email" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <i class='bx bx-lock'></i>
+                <div class="input-field">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+            </div>
+            
+            <!-- Add a checkbox for showing/hiding the password -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="showPassword" />
+                <label for="showPassword">Show Password</label>
+            </div>
+            
+            <button type="submit" class="btn">Login</button>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #5F97AA;
+    --accent-color-1: #18363E;
+    --accent-color-2: #2D5F6E;
+    --accent-color-3: #3E88A5;
+    --accent-color-4: #93C4D1;
+    --accent-color-5: #0058b120;
+    --accent-color-6: #0058b10c;
+    --light-color: #f4f4f4;
+    --text-color: #ffffff;
+    --font-family: 'Khand', sans-serif;
+}
+#contestantSection {
+    display: none;
+    padding: 5px;
+}
+#contestantSection h2{
+    margin: 5px;
+    font-size: 2rem;
+}
+
+/* Tabs styling */
+#contestantSection .tabs {
+    display: flex;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#contestantSection .tabs button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+}
+
+#contestantSection .tabs button:hover,
+#contestantSection .tabs button:focus {
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+#contestantSection .tabs button.active {
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* Grouping the search input and add button */
+.search-add-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Wrapper for search input with icon */
+.search-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.search-input-wrapper i {
+    position: absolute;
+    left: 12px; /* Adjusted left position for icon */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color-3);
+    font-size: 18px;
+    pointer-events: none; /* Ensures icon doesn't interfere with input */
+}
+
+/* Adjust input padding to account for icon */
+#contestantSection .search-input-wrapper input[type="text"] {
+    width: 50%;
+    padding: 10px 10px 10px 35px; /* Extra left padding for icon space */
+    border: 1px solid var(--accent-color-2);
+    border-radius: 4px;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    font-size: 14px;
+}
+
+#contestantSection .search-input-wrapper input[type="text"]::placeholder {
+    color: var(--accent-color-3); /* Placeholder color to match icon */
+    opacity: 0.8;
+}
+
+/* Add contestant button */
+#contestantSection .search-add-group .add-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: var(--font-family);
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Aligns button to the far right */
+}
+
+#contestantSection .add-btn i {
+    margin-right: 5px;
+    font-size: 16px; /* Adjusted icon size for consistency */
+    color: var(--text-color);
+}
+
+/* Button hover effect */
+#contestantSection .search-add-group .add-btn:hover {
+    background-color: var(--accent-color-2);
+}
+
+/* Trash icon styling */
+#contestantSection table td .bx-trash {
+    color: #ff4d4f; /* Red color for the trash icon */
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+#contestantSection table td button {
+    outline: none;
+    border: none;
+    background-color: var(--light-color);
+    padding: 0px;
+}
+
+#contestantSection table td .bx-trash:hover {
+    color: #ba0000; /* Darker red on hover */
+}
+
+/* Table styling */
+
+#contestantSection #femaleContestantsTable{
+    display: none;
+}
+#contestantSection table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: var(--light-color);
+    font-family: var(--font-family);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#contestantSection table th,
+#contestantSection table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+#contestantSection table thead th {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+#contestantSection table tbody tr:nth-child(even) {
+    background-color: var(--accent-color-6);
+}
+
+#contestantSection table tbody tr:hover {
+    background-color: var(--accent-color-5);
+}
+
+#contestantSection table td {
+    color: #333;
+    position: relative;
+}
+
+#contestantSection table td:last-child {
+    text-align: center;
+}
+
+#contestantSection table td .bx-trash {
+    color: #ff4d4f;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+#contestantSection table td .bx-trash:hover {
+    color: #e60000;
+}

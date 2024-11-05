@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pageant Admin Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="contestantTab.css">
+    <script type="module" src="dashboard.js"></script>
+</head>
+<body>
+    <!-- Left Navigation -->
+    <nav class="left-nav">
+        <div class="logo">
+            <img src="image/CES Antipolo.png" alt="Pageant Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html"><i class='bx bxs-dashboard'></i> <span>Dashboard</span></a></li>
+            <li><a id="contestantTab"><i class='bx bxs-user'></i> <span>Contestants</span></a></li>
+            <li><a href="#"><i class='bx bxs-user-circle'></i> <span>Judges</span></a></li>
+            <li><a href="#"><i class='bx bx-list-ul'></i> <span>Criteria</span></a></li>
+            <li><a id="rankingTab"><i class='bx bxs-star'></i> <span>Rankings</span></a></li>
+            <li><a id="scoresTab"><i class='bx bxs-chart'></i> <span>Scores</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <!-- Menu Toggle Button -->
+            <button class="menu-toggle-btn" aria-label="Toggle Menu" aria-expanded="true">
+                <i class='bx bx-menu'></i>
+            </button>
+            
+            <div class="admin-profile">
+                <i class='bx bxs-user-circle admin-icon' aria-hidden="true"></i>
+                <span>Joriz Chiong</span>
+            </div>
+            <button class="signout-btn" id="signOutBtn"><i class='bx bx-log-out'></i> Sign Out</button>
+        </header>
+
+        <!-- Dashboard Overview -->
+        <section class="dashboard-overview">
+            <div class="card">
+                <h3>Total Contestants</h3>
+                <p>40</p>
+            </div>
+            <div class="card">
+                <h3>Number of Judges</h3>
+                <p>5</p>
+            </div>
+            <div class="card">
+                <h3>Top-Ranked Contestant</h3>
+                <p>Naruto Uzumaki</p>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="quick-links">
+            <a href="#" class="quick-link"><i class='bx bx-user-plus'></i> Manage Contestants</a>
+            <a href="#" class="quick-link"><i class='bx bx-star'></i> View Rankings</a>
+            <a href="#" class="quick-link"><i class='bx bx-check-shield'></i> Review Scores</a>
+        </section>
+
+        <!-- Contestant Section -->
+        <section id="contestantSection">
+            <h2>Contestants</h2>
+            <div class="tabs">
+                <!-- Added IDs for each button for easier JavaScript targeting -->
+                <button id="maleTab">Male Contestants</button>
+                <button id="femaleTab">Female Contestants</button>
+            </div>
+
+            <!-- Male Contestants Table -->
+            <section id="maleContestantsTable" class="contestant-table">
+                <div class="search-add-group">
+                    <div class="search-input-wrapper">
+                        <i class="bx bx-search"></i>
+                        <input type="text" id="maleSearch" placeholder="Search Male Contestants">
+                    </div>
+                    <button id="addMaleContestant" class="add-btn"><i class="bx bx-plus"></i> Add Contestant</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contestant No</th>
+                            <th>Name</th>
+                            <th>Campus</th>
+                            <th>Course</th>
+                            <th>Age</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add Male Contestants Rows Dynamically Here -->
+                        <tr>
+                            <span id="cMNumber"><td>01</td></span>
+                            <span id="cMName"><td>Naruto Uzumaki</td></span>
+                            <span id="cMCampus"><td>North</td></span>
+                            <span id="cMCourse"><td>BSIT</td></span>
+                            <span id="cMAge"><td>20</td></span>
+                            <td><button><i class="bx bx-trash"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Female Contestants Table -->
+            <section id="femaleContestantsTable" class="contestant-table">
+                <div class="search-add-group">
+                    <div class="search-input-wrapper">
+                        <i class="bx bx-search"></i>
+                        <input type="text" id="femaleSearch" placeholder="Search Female Contestants">
+                    </div>
+                    <button id="addFemaleContestant" class="add-btn"><i class="bx bx-plus"></i> Add Contestant</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contestant No</th>
+                            <th>Name</th>
+                            <th>Campus</th>
+                            <th>Course</th>
+                            <th>Age</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add Female Contestants Rows Dynamically Here -->
+                        <tr>
+                            <span id="FNumber"><td>01</td></span>
+                            <span id="cFName"><td>Naruto Uzumaki</td></span>
+                            <span id="cFCampus"><td>North</td></span>
+                            <span id="cFCourse"><td>BSIT</td></span>
+                            <span id="cFAge"><td>20</td></span>
+                            <td><button><i class="bx bx-trash"></i></button></td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+
+        <!-- Scores Section -->
+        <section class="scores-section" id="scoresSection" style="display: none;">
+            <!-- Judges Selection -->
+            <div class="judges-selection">
+                <!-- Dynamic Judge Buttons will be inserted here -->
+            </div>
+
+            <!-- Filters: Gender and Criteria Dropdowns -->
+            <div class="filters">
+                <select class="gender-dropdown">
+                    <option selected disabled>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <select class="criteria-dropdown">
+                    <option selected disabled>Select Criteria</option>
+                    <option value="sportswear">Sportswear</option>
+                    <option value="eveningGown">Evening Gown</option>
+                    <option value="talentPerformance">Talent/Performance</option>
+                    <option value="questionAndAnswer">Question & Answer</option>
+                    <option value="overallImpact">Overall Impact</option>
+                </select>
+            </div>
+
+            <!-- Scores Table -->
+            <div class="scores-table">
+                <!-- Sportswear Criteria Table -->
+                <table id="sportswearCriteria" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Contestant No</th>
+                            <th>Name</th>
+                            <th>Fitness & Physique</th>
+                            <th>Confidence & Poise</th>
+                            <th>Walk/Stage Presence</th>
+                            <th>Audience Impact</th>
+                            <th>Total Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic Rows will be inserted here -->
+                    </tbody>
+                </table>
+
+                <!-- Evening Gown Criteria Table -->
+                <table id="eveningGownCriteria" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Contestant No</th>
+                            <th>Name</th>
+                            <th>Elegance & Grace</th>
+                            <th>Gown Design & Fit</th>
+                            <th>Poise & Posture</th>
+                            <th>Walk/Stage Presence</th>
+                            <th>Audience Impact</th>
+                            <th>Total Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic Rows will be inserted here -->
+                    </tbody>
+                </table>
+
+                <!-- Talent/Performance Criteria Table -->
+                <table id="talentPerformanceCriteria" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Contestant No</th>
+                            <th>Name</th>
+                            <th>Creativity & Originality</th>
+                            <th>Skill & Execution</th>
+                            <th>Stage Presence</th>
+                            <th>Audience Impact</th>
+                            <th>Total Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic Rows will be inserted here -->
+                    </tbody>
+                </table>
+
+                <!-- Question & Answer Criteria Table -->
+                <table id="questionAndAnswerCriteria" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Contestant No</th>
+                            <th>Name</th>
+                            <th>Relevance of Answer</th>
+                            <th>Confidence & Delivery</th>
+                            <th>Composure Under Pressure</th>
+                            <th>Audience Impact</th>
+                            <th>Total Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic Rows will be inserted here -->
+                    </tbody>
+                </table>
+
+                <!-- Overall Impact Criteria Table -->
+                <table id="overallImpactCriteria" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Contestant No</th>
+                            <th>Name</th>
+                            <th>Beauty</th>
+                            <th>Charisma</th>
+                            <th>Personality</th>
+                            <th>Total Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic Rows will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="rankingSection" class="ranking-section">
+            <!-- Filters for Gender and Criteria -->
+            <div class="filters">
+                <select id="ranking-gender-filter" class="ranking-dropdown gender-dropdown">
+                    <option selected disabled>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+        
+                <select id="ranking-criteria-filter" class="ranking-dropdown criteria-dropdown">
+                    <option selected disabled>Select Criteria</option>
+                    <option value="sportswear">Sportswear</option>
+                    <option value="eveningGown">Evening Gown</option>
+                    <option value="talentPerformance">Talent/Performance</option>
+                    <option value="questionAndAnswer">Question & Answer</option>
+                    <option value="overallImpact">Overall Impact</option>
+                </select>
+            </div>
+        
+            <!-- Leaderboard Section -->
+            <div class="leaderboard">
+                <div class="leaderboardHeader">
+                    <p class="ranking-title">Rankings</p>
+                    <p class="ranking-subtitle" id="ranking-subtitle">Criteria</p>
+                </div>
+        
+                <div class="standing-board">
+                    <!-- Standing leaderboard with rank positions -->
+                    <!-- These will be dynamically populated -->
+                </div>
+        
+                <!-- Table for the full ranking -->
+                <div class="ranking-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Contestant No</th>
+                                <th>Name</th>
+                                <th>Total Average Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rankingTableBody">
+                            <!-- Dynamic Rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        
+
+
+
+    </div>
+    
+</body>
+</html>
